@@ -3,11 +3,11 @@ Git-Project
 
 Class-related project to create a code hosting website, based on the git model.
 
-Introduction <br/>
+<b>Introduction </b><br/>
   Github is a well known and widely used repository host for code (lots of other data as well e.g. this README). Recently, the Github group has come under fire for sexists practices against female employees. Further, sexist practices are likely a reflection of the wider "boy's club" mentality that is pervasive in the computing industry. As a firm rebuttal against the sexists practices at Github, we are going to construct a git repository system that mimics the functionality of github.
   
   
-  Open Letter to GitHub:
+ <b> Open Letter to GitHub:</b>
   
   Dear GitHub,
 
@@ -31,5 +31,5 @@ I want to support the steps that GitHub is taking, however reluctantly, toward t
 
 This letter is about a call for equity and transparency.
 
-Thank you for your time. 
+Thank you for your time. <br/>
 Kiri Strack-Grose
