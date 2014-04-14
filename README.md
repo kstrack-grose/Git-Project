@@ -4,7 +4,7 @@ Git-Project
 Class-related project to create a code hosting website, based on the git model.
 
 <b>Introduction </b><br/>
-  Github is a well known and widely used repository host for code (lots of other data as well e.g. this README). Recently, the Github group has come under fire for sexists practices against female employees. Further, sexist practices are likely a reflection of the wider "boy's club" mentality that is pervasive in the computing industry. As a firm rebuttal against the sexists practices at Github, we are going to construct a git repository system that mimics the functionality of github.
+  GitHub is a well known and widely used repository host for code (lots of other data as well e.g. this README). Recently, GitHub has come under fire for a sexist work environment. Furthermore, these sexist practices are likely a reflection of the wider "boy's club" mentality that is pervasive in the computing industry. As a firm rebuttal against the sexist practices at Github, we are going to construct a code repository system that mimics the functionality of GitHub.
   
   
  <b> Open Letter to GitHub:</b>
