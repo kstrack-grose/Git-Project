@@ -1,4 +1,5 @@
-Kiri Stackhouse and Jeffrey Matthews
+Kiri Strack-Grose and Jeffrey Matthews
+
 As-Yet-Unnamed Code Hosting Website Project
 
 (Giteroparous? Giteracy?? Giterosaurus???)
@@ -11,8 +12,7 @@ Andrew Cencini
 
 Project Proposal
 
-Project
-	The intention of the project is to create a code hosting website, based on the Git model. The purpose of the project is manifold, and the primary facets are to a) learn and implement interesting and useful knowledge regarding git architecture, websites, etc, and to b) smash the patriarchy by creating an equitable alternative to GitHub.
+Project:  The intention of the project is to create a code hosting website, based on the Git model. The purpose of the project is manifold, and the primary facets are to a) learn and implement interesting and useful knowledge regarding git architecture, websites, etc, and to b) smash the patriarchy by creating an equitable alternative to GitHub.
 
 Partners:
 
@@ -41,8 +41,8 @@ Partners:
 	Roi Karlinsky (rkarlinsky@bennington.edu)
 
 	Scott Milliman (smilliman@bennington.edu)
-Process
-	Through a flexible, active schedule, we will progress through a continual learn-and-implement process. By dividing the whole task into smaller, manageable parts and assigning those parts to individuals or small groups, we will work steadily on the many parts this project will require, such as:
+	
+Process: Through a flexible, active schedule, we will progress through a continual learn-and-implement process. By dividing the whole task into smaller, manageable parts and assigning those parts to individuals or small groups, we will work steadily on the many parts this project will require, such as:
 
 a) a place to store the code, as well as a way to access that storage
 
@@ -50,9 +50,7 @@ b) an easy way to upload and share code
 
 c) a user-friendly website to satisfy the social aspects of programming.
 
-Project, Parsed:
-
-At its core, our project is to create a working file storage system that holds text files. To create this, many component functions need to be implemented.
+Project, Parsed:  At its core, our project is to create a working file storage system that holds text files. To create this, many component functions need to be implemented.
 The text files need to be accessed and modified by a variety of users on a variety of machines. 
 The changes made to files within the repository need to be merged back onto the repository. 
 All of the changes also need to be tracked. 
