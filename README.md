@@ -67,15 +67,15 @@ We anticipate a multitude of nebulous, undefined problems. However, the clearest
 
 Resources (list in progress):
 
-A server, or at least server space.
+1. A server, or at least server space.
 
-A domain name.
+2. A domain name.
 
-A host for said website.
+3. A host for said website.
 
-Extra educational materials such as texts and web tutorials
+4. Extra educational materials such as texts and web tutorials
 
-Time and brainpower.
+5. Time and brainpower.
 
-Andrew’s time and brainpower.
+6. Andrew’s time and brainpower.
 
