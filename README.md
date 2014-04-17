@@ -15,8 +15,7 @@ Andrew Cencini
 
 Project Proposal
 
-Project:
-	
+Project
 	
 	The intention of the project is to create a code hosting website, based on the Git model. The purpose of the project is manifold, and the primary facets are to a) learn and implement interesting and useful knowledge regarding git architecture, websites, etc, and to b) smash the patriarchy by creating an equitable alternative to GitHub.
 Partners:
@@ -35,7 +34,7 @@ Partners:
 	12. Roi Karlinsky (rkarlinsky@bennington.edu)
 	13. Scott Milliman (smilliman@bennington.edu)
 
-Process:
+Process
 
 	Through a flexible, active schedule, we will progress through a continual learn-and-implement process. By 
 
