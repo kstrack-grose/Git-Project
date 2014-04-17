@@ -2,13 +2,22 @@ Git-Project
 ===========
 
 Kiri Strack-Grose, Project Manager of
+
 As-Yet-Unnamed Code Hosting Website Project
+
 (Giteroparous? Giteracy?? Giterosaurus???)
+
 Intensive Introduction to Computer Science
+
 Andrew Cencini
+
 17.4.2014
+
 Project Proposal
+
 Project:
+	
+	
 	The intention of the project is to create a code hosting website, based on the Git model. The purpose of the project is manifold, and the primary facets are to a) learn and implement interesting and useful knowledge regarding git architecture, websites, etc, and to b) smash the patriarchy by creating an equitable alternative to GitHub.
 Partners:
 	1. Alexander Holt (aholt@bennington.edu)
