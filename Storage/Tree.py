@@ -7,14 +7,15 @@
 # real tree structure, but something like it
 
 # Make a Head Directory with an absolute path
-
+# this path is hardcoded though, meaning that nobody else can access this code
 
 import os, sys
 
 #this gives the path name
 path = "/home/rkarlinsky/GitHub/Git-Project/Storage/Tree"
 # this creates the directory to the path with the mode (u=rwx)
-os.mkdir( path, 0755 );
+if not os.path.exists(path):
+	os.makedirs(path, 0755) 
 
 print "Path is created"
 
@@ -26,22 +27,52 @@ print "Path is created"
 # contents, using the os.listdir(path) method
 # then,the program will compare the new contents to the old contents,  
 # and if anything changed, it will make a new directory 
-
+# 
 # example code:
 
 # the following example shows the usage of listdir() method.
 
-#!/usr/bin/python
-
 # import os, sys
-
 # Open a file
- #path = "/var/www/html/"
- #dirs = os.listdir( path )
+# path = "/home/rkarlinsky/GitHub/Git-Project/Storage/Tree"
+# dirs = os.listdir( path )
 
 # This would print all the files and directories
 # for file in dirs:
-  #  print file
+ 	#print file
 
-# if not os.path.exists(directory):
-   # os.makedirs(directory)
+#if not os.path.exists(directory):
+	#os.makedirs(directory)
+
+# the Shutil module is great for copying directories into new destinations
+
+#import shutil
+#import os
+#source = os.listdir("/tmp/")
+#destination = "/tmp/newfolder/"
+#for files in source:
+    #if files.endswith(".txt"):
+        #shutil.copy(files,destination)
+
+#import shutil  
+#shutil.copyfile('/path/to/file', '/path/to/other/phile')  
+
+#import shutil
+#import os
+#source = os.listdir("/tmp/")
+#destination = "/tmp/newfolder/"
+#for files in source:
+   # if files.endswith(".txt"):
+    #    shutil.move(files,destination)
+
+#import shutil
+#import os
+#SOURCE = "samples"
+#BACKUP = "samples-bak"
+# create a backup directory
+#shutil.copytree(SOURCE, BACKUP)
+#print os.listdir(BACKUP)
+
+# This removes the directory 'three' and anything beneath it in the filesystem.
+#import shutil
+#shutil.rmtree('one/two/three')
