@@ -9,13 +9,16 @@
 # Make a Head Directory with an absolute path
 # this path is hardcoded though, meaning that nobody else can access this code
 
-import os, sys
+import os, sys, ostry
 
 #this gives the path name
-path = "/home/rkarlinsky/GitHub/Git-Project/Storage/Tree"
+path = str(ostry.place)
 # this creates the directory to the path with the mode (u=rwx)
 if not os.path.exists(path):
 	os.makedirs(path, 0755) 
+
+else:
+	print "This directory already exists."
 
 print "Path is created"
 
