@@ -3,9 +3,16 @@
 def attempt(file):
 	timestamp = "timestamp goes here"
 	myFile = open(file, "at")
-	myFile.write(timestamp)
+	myFile.write("#", timestamp)
 	myFile.close
 	return timestamp
 
 
-#make a function that will take the last line of the file and read it back
+def readLastLine(file):
+	myFile = open(file, "rt")
+	lines = myFile.readlines()
+	lastline = lines[-1]
+	print lastline
+	return lastline
+
+readLastLine("ostry.py")
