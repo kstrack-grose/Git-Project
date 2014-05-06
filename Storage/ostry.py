@@ -6,4 +6,3 @@ def place():
 	place = os.system('pwd')
 	return place
 
-#comment
