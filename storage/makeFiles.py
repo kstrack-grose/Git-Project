@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import os
 #comparing files and, if different, making a new one
 
 def compareAndMake(file, oldFile, newFileName):
@@ -36,5 +36,9 @@ def compareAndMake(file, oldFile, newFileName):
 		oldfile.close
 		return
 
-compareAndMake("example1.txt", "example2.txt", "NEWFILE.txt")
+
+#make a new directory
+dirName = ""
+path = "/home/kstrack-grose/Git-Project/Git-Project/storage/%s" % dirName
+os.makedirs(path)
 
