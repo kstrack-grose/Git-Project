@@ -38,7 +38,10 @@ def compareAndMake(file, oldFile, newFileName):
 
 
 #make a new directory
-dirName = ""
-path = "/home/kstrack-grose/Git-Project/Git-Project/storage/%s" % dirName
-os.makedirs(path)
+dirName = "/nameee"  #this needs to have a / in front 
+			#should be softcoded later
+cwd = str(os.getcwd()) #current working directory
+path = str(cwd+dirName) #concatentate!
+#if os.path.isdir
+os.makedirs(path)  #booyah
 
