@@ -36,12 +36,12 @@ def compareAndMake(file, oldFile, newFileName):
 		oldfile.close
 		return
 
-
-#make a new directory
-dirName = "/nameee"  #this needs to have a / in front 
-			#should be softcoded later
-cwd = str(os.getcwd()) #current working directory
-path = str(cwd+dirName) #concatentate!
-#if os.path.isdir
-os.makedirs(path)  #booyah
+def makeDir(dirName):
+	#make a new directory
+	newName = str("/"+dirName)  #this needs to have a / in front 
+			#should be softcoded later to reflect versioning
+	cwd = str(os.getcwd()) #current working directory
+	path = str(cwd+dirName) #concatentate!
+	#if os.path.isdir
+	os.makedirs(path)  #booyah
 
