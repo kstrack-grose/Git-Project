@@ -3,7 +3,7 @@
 import os, sys, makeFiles
 
 #initalize variables
-path = "/home/kstrack-grose/Git-Project/Git-Project/storage"
+path = str(os.getcwd())
 
 #list of all the files in a directory
 dirs = os.listdir(path)

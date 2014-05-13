@@ -1,8 +1,6 @@
 Kiri Strack-Grose and Jeffrey Matthews
 
-As-Yet-Unnamed Code Hosting Website Project
-
-(Giteroparous? Giteracy?? Giterosaurus???)
+"Reposaurus!"
 
 Intensive Introduction to Computer Science
 
