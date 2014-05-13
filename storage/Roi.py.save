@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+# Roi and Chernoh and Scott and Xander and Kiri (and Andrew) May 12, 2014
+# This program makes a new directory based on compared changes
+
+import os, sys, shutil
+
+pathFrom = raw_input("Gimme a path please")
+
+pathForNewDir = str(os.getcwd())
+
+# get user-input directory
+	# and copy it to the current working directory
+	# and name the new directory iteratively
+	# 

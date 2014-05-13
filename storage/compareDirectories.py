@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os, sys, makeFiles
+import os, sys, makeFiles, shutil
 
 #initalize variables
 path = str(os.getcwd())
@@ -17,5 +17,4 @@ for x in range(0, len(dirs)):
 	file = str(dirs[x])
 	print file
 	makeFiles.compareAndMake(file, file, file)
-
 
