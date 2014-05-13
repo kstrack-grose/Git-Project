@@ -1,5 +1,15 @@
 #!/usr/bin/python
 import os
+
+# reading through files
+
+def readFiles(file):
+	myFile = open(file, "rt")
+        contents = myFile.read()
+	myFile.close
+	return contents 
+
+
 #comparing files and, if different, making a new one
 
 def compareAndMake(file, oldFile, newFileName):
