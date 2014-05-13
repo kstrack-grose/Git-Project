@@ -45,3 +45,17 @@ def makeDir(dirName):
 	#if os.path.isdir
 	os.makedirs(path)  #booyah
 
+
+def rename(file): #parameter: file to be renamed
+	import os
+	newName = raw_input("New name: ")
+	oldFile = open(file, "rt") #opening old file
+	contents = oldFile.read() #saving its innards
+	newFile = open(newName, "wt") #opening new file
+	newFile.write(contents) #pouring old innards into it
+	print "Your file has been renamed."
+	#what should happen now is deleting the old file
+	os.remove(file)
+	oldFile.close
+	newFile.close
+
