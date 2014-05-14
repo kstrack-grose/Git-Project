@@ -9,7 +9,8 @@ import os, sys, makeFiles, distutils.core
 # variables!:
 
 # the user-given path, aka the source of the data we're going to copy
-source = raw_input("gimme a path ")
+#source = raw_input('gimme a path: ')
+source = '/home/rkarlinsky/GitHub/Git-Project/New'
 
 # list of contents of said directory
 srcCont = os.listdir(source)
@@ -35,40 +36,46 @@ destination = repo+'/'+raw_input('name new version: ')
 # this is an early version of versioning
 # eventually we will number each new directory sequentially
 # for now it's just raw input
-def compareAndMakeDirectories(userPath, newVersion, repoDirectoryContents, userDirectoryContents):
+
+# def compareAndMakeDirectories(userPath, newVersion, repoDirectoryContents, userDirectoryContents):
+
 # think of the paramaters this way for now:
 # source = userPath
 # destination = newVersion
 # repoCont = repoDirectoryContents
 # srcCont = userDirectoryContents
-	
-	repoContentList = []
-	userContentList = []
 
-# go through contents of old directory	
-	for x in range(0, len(repoDirectoryContents)):
-        	file = str(repoDirectoryContents[x])
-        	repoContents = makeFiles.readFiles(file)
-		repoContentList.append(repoContents)
+repoContentList = []
+userContentList = []
+
+# go through contents of old directory  
+for x in repoCont:
+	repoFile = x
+        repoContents = makeFiles.readFiles(repoFile)
+        repoContentList.append(repoContents)
+
+print repoContentList
 
 # go through contents of user-given directory
-	for x in range(0, len(userDirectoryContents)):
-                file = str(userDirectoryContents[x])
-                userContents = makeFiles.readFiles(file)
-		userContentList.append(userContents)
-	
-	
-	# if there are no changes then return no changes
- 	if repoContentList == userContentList:
-		print "no change"
-		return  
-		
-	
-	elif userContentList != repoContentList:
-		distutils.dir_util.copy_tree(userPath, newVersion)
+for y in srcCont:
+	userFile = y
+        userContents = makeFiles.readFiles(userFile)
+        userContentList.append(userContents)
 
-	else:
-		print "something went wrong"
-	
+print userContentList
 
-compareAndMakeDirectories(source, destination, repoCont, srcCont)
+        # if there are no changes then return no changes
+if repoContentList == userContentList:
+	print "no change"
+
+
+elif userContentList != repoContentList:
+	distutils.dir_util.copy_tree(source, destination)
+
+else:
+	print "something went wrong"
+
+
+#compareAndMakeDirectories(source, destination, repoCont, srcCont)
+
+

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os, sys, makeFiles, shutil
+import os, sys, makeFiles
 
 #initalize variables
 path = str(os.getcwd())

@@ -1,10 +1,9 @@
 #!/usr/bin/python
 
 # Roi and Chernoh and Scott and Xander and Kiri (and Andrew) May 12, 2014
-# This program makes a new directory with user given data
-# It works too!!
+# This program makes a new directory based on compared changes
 
-import os, sys, distutils.core
+import os, sys, 
 
 # this is the current working directory
 path = str(os.getcwd())
@@ -18,11 +17,10 @@ destination = path+'/'+raw_input('give a place to go: ')
 # this is where we're copying from
 # so the website will give us a path with user-inputed info
 # and then we'll copy those contents
-source = "/home/rkarlinsky/GitHub/Git-Project/New" 
+source = "/home/rkarlinsky/GitHub/Git-Project/storage/New" 
 
-# distutils lets you copy a tree and put it into
-# a new directory, without deleting the old one
-# which is what shutil did
-# we don't like shutil (Robin)
-# so this copies user data into a new directory
+# shutil is not really working
+# we want it to copy user data into a new directory
+# but if the directory already exists it doesn't work
 distutils.dir_util.copy_tree(source, destination)
+ 
