@@ -9,10 +9,10 @@
 # Make a Head Directory with an absolute path
 # this path is hardcoded though, meaning that nobody else can access this code
 
-import os, sys, ostry
+import os, sys
 
 #this gives the path name
-path = str(ostry.place)
+path = "~/"
 # this creates the directory to the path with the mode (u=rwx)
 if not os.path.exists(path):
 	os.makedirs(path, 0755) 
@@ -22,8 +22,12 @@ else:
 
 print "Path is created"
 
-# Once we make the head, we need to make sure the program doesn't try to
-# make it again, since it won't work
+# What we want to do is take the contents of the directory containing the most
+# recent version, put it into a variable or list, and check it against the 
+# version being sent from the user. Using if/else, we will check if the two
+# versions are the same. If so, do nothing, if not, create a new version in 
+# a new directory, named the next number sequentially after the most recent
+# version.	
 # Next steps would be: write files and other shit to directory
 # Kiri's working on that
 # Then have functions (or something) that list the directory's
