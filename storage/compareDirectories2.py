@@ -53,7 +53,9 @@ def compareAndMakeDirectories(userPath, newVersion, repoDirectoryContents, userD
 
 # go through contents of user-given directory
 	for x in range(0, len(userDirectoryContents)):
-                file = str(userDirectoryContents[x])
+                # the reason we're putting userPath in here is so that
+		# the program will have the path to the file
+		file = userPath+'/'+str(userDirectoryContents[x])
                 userContents = makeFiles.readFiles(file)
 		userContentList.append(userContents)
 	
@@ -66,9 +68,10 @@ def compareAndMakeDirectories(userPath, newVersion, repoDirectoryContents, userD
 	
 	elif userContentList != repoContentList:
 		distutils.dir_util.copy_tree(userPath, newVersion)
+		return
 
 	else:
 		print "something went wrong"
-	
+		return	
 
 compareAndMakeDirectories(source, destination, repoCont, srcCont)
