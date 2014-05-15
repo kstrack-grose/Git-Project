@@ -17,6 +17,7 @@ srcCont = os.listdir(source)
 # the current working directory, aka destination where we'll
 # make a new directory with the user's data
 # this is a proxy for our repo
+
 repo = str(os.getcwd())
 
 # list of contents in current working directory (repo)
@@ -24,17 +25,21 @@ repoCont = os.listdir(repo)
 
 # this will be the new directory made in the repo
 # where we will put the user's data
+
+# What is now raw input will come from the lastDir function, which live now in
+# versioningWithRoi.py 
+
 destination = repo+'/'+raw_input('name new version: ')
 
 # This function should go through the contents of every file in the 
-# working directory (i.e. repo) and the directory/file modified or given
-# by the user
+# working directory (i.e. repo, which will be user specific) and the 
+#directory/file modified or given by the user (the tmp file from WSGI)
 # and then, if they're different from each other, make a new directory
-# in the repo
-# and move the contents of the user's directory into the new directory
-# this is an early version of versioning
-# eventually we will number each new directory sequentially
-# for now it's just raw input
+# in the repo which will be named using the newVersion paramater (more details
+# below) and move the contents of the tmp/WSGi directory into the new directory
+# for now it's still raw input, to be implemented soon, along with the naming
+# for newVersion. If you were looking for something to do, or something...
+
 def compareAndMakeDirectories(userPath, newVersion, repoDirectoryContents, userDirectoryContents):
 # think of the paramaters this way for now:
 # source = userPath
@@ -65,7 +70,10 @@ def compareAndMakeDirectories(userPath, newVersion, repoDirectoryContents, userD
 		print "no change"
 		return  
 		
-	
+	# newVersion will eventually come from repo (being the path for the
+	# user's repo) + '.' + timeStamp (so that it will be named so that it 
+	# is after lastDir, and becomes the NEW most recent directory, or 
+	# lastDir the NEXT time you run this function.
 	elif userContentList != repoContentList:
 		distutils.dir_util.copy_tree(userPath, newVersion)
 		return
