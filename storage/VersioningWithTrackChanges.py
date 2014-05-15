@@ -4,7 +4,7 @@
 # and create new version of the directory if contents are modified
 
 import os 
-import shutil
+import distutil.core
 import stat
 
 dst = raw_input("version name: ")
@@ -17,10 +17,10 @@ def trackNversion(TestDirFiles, dst, symlinks=False, ignore=None):
         s = os.path.join(TestDirFiles, contents)
         d = os.path.join(dst, contents)
         if os.path.isdir(s):
-            copytree(s, d, symlinks, ignore)
+            distutils.dir_util.copy_tree(s, d, symlinks, ignore)
         else:
             if not os.path.exists(d) or os.stat(TestDirFiles).st_mtime - os.stat(dst).st_mtime > 1:
-                shutil.copy2(s, d)
+                distutils.dir_util.copy_tree(s, d)
 	
 
 trackNversion(TestDirFiles, dst, symlinks=False, ignore=None)
