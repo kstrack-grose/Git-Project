@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-def attempt(file):
+def timeStamp(file):
 	import datetime
 	timestamp = str(datetime.datetime.now())
 	myFile = open(file, "at")
