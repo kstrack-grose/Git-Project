@@ -18,4 +18,3 @@ for x in range(0, len(dirs)):
 	print file
 	makeFiles.compareAndMake(file, file, file)
 
-
