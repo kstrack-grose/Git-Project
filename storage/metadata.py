@@ -1,7 +1,8 @@
 #!/usr/bin/python
 
 def attempt(file):
-	timestamp = "timestamp goes here"
+	import datetime
+	timestamp = str(datetime.datetime.now())
 	myFile = open(file, "at")
 	myFile.write("#")
 	myFile.write(timestamp)
