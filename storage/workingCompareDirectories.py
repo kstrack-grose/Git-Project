@@ -95,9 +95,13 @@ recentVersion = repo +'/'+str(lastDir(repo))
 	# list of contents in most recently updated directory
 recentVersionCont = os.listdir(recentVersion)
 
-	# This will be the new home of the latest version given by the user
-	# which will be timestamped 
-destination = repo+'/'+str(datetime.datetime.now())
+	# this is a timestamp
+time = datetime.datetime.now()
+timestamp = time.strftime('%x.%X')
+
+	# This will be the new home of the latest version given by the user 
+destination = repo+'/'+timestamp
+
 
 	# Now we're calling the program! Magic presto!
 compareAndMakeDirectories(source, destination, recentVersionCont, sourceFiles)
