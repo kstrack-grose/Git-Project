@@ -19,10 +19,8 @@ def lastDir(repo):
 	# because oslist.dir lists contents in an arbitrary order, sorted()
 	# sorts the list numerically
         repoList = sorted(os.listdir(repo))
-      	print repoList
-	# lastDir will become the last entry in repoList
+        # lastDir will become the last entry in repoList
 	lastDir = repoList[-1]
-	print lastDir
         return lastDir
 
 # Raw input for now, a real path for later.
@@ -34,6 +32,10 @@ lastDir(raw_input("Give me a directory full of directories to list "))
 # This will eventually be the timestamp, I just copied it from the metadata.py
 # file. Basically just saving it for laterz.
 
+# This will be what we append to the name of new versions (directories in the
+# users repos) after the user's user name, so that each directory looks like 
+# username.timestamp e.g. chernoh.05.05.14.  
+
 def timeStamp(file):
         import datetime
         timestamp = str(datetime.datetime.now())
@@ -42,7 +44,6 @@ def timeStamp(file):
         myFile.write(timestamp)
         myFile.close
         return timestamp
-
 
 def readLastLine(file):
         myFile = open(file, "rt")
