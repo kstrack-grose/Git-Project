@@ -9,13 +9,13 @@ import os, sys, makeFiles, distutils.core, datetime
 # variables!:
 
 # the user-given path, aka the source of the data we're going to copy
-source = raw_input("gimme a path ")
+source = raw_input("gimme a source path ")
 
 # list of contents of said directory
 sourceCont = os.listdir(source)
 
 # this is a proxy for the repo
-repo = str(os.getcwd())
+repo = raw_input("gimme a repo path ")
 
 
 # A Function that creates A list Of the directories (versions) within the 
@@ -70,13 +70,13 @@ def compareAndMakeDirectories(userPath, newVersion, versionDirectoryContents, us
 	userContentList = []
 
 # go through contents of old directory	
-	for x in versionDirectoryContents:
+	for x in range(0, len(versionDirectoryContents)):
         	file = str(versionDirectoryContents[x])
         	versionContents = makeFiles.readFiles(file)
 		versionContentList.append(versionContents)
 
 # go through contents of user-given directory
-	for x in userDirectoryContents:
+	for x in range(0, len(userDirectoryContents)):
                 # the reason we're putting userPath in here is so that
 		# the program will have the path to the file
 		file = userPath+'/'+str(userDirectoryContents[x])
