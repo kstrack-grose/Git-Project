@@ -96,11 +96,13 @@ recentVersion = repo +'/'+str(lastDir(repo))
 recentVersionCont = os.listdir(recentVersion)
 
 	# this is a timestamp
-time = datetime.datetime.now()
-timestamp = time.strftime('%x.%X')
+	# our issue is that we can't find a way to 
+	# make a clean timestamp
+time = str(datetime.datetime.now())
+#timestamp = time.strftime('%x.%X')
 
 	# This will be the new home of the latest version given by the user 
-destination = repo+'/'+timestamp
+destination = repo+'/'+time
 
 
 	# Now we're calling the program! Magic presto!
