@@ -7,7 +7,7 @@
 	# in a repo and making a new directory with user-given data
 	# if changes had been detected 
 
-import os, sys, makeFiles, distutils.core, datetime
+import os, sys, makeFiles, distutils.core, datetime, time
 
 ########################### FUNCTIONS ################################
 
@@ -96,13 +96,13 @@ recentVersion = repo +'/'+str(lastDir(repo))
 recentVersionCont = os.listdir(recentVersion)
 
 	# this is a timestamp
-	# our issue is that we can't find a way to 
-	# make a clean timestamp
-time = str(datetime.datetime.now())
-#timestamp = time.strftime('%x.%X')
+	# it'll return the name of the month, the day, the year
+	# and the time down to the seconds
+ts = time.time()
+timestamp = datetime.datetime.fromtimestamp(ts).strftime('%B-%d-%y.%H.%M.%S')
 
 	# This will be the new home of the latest version given by the user 
-destination = repo+'/'+time
+destination = repo+'/'+timestamp
 
 
 	# Now we're calling the program! Magic presto!
