@@ -1,0 +1,41 @@
+from pprint import pformat
+import cgi 
+
+def application(environ, start_response):
+    # show the environment:
+    output = ['<pre>']
+    output.append(pformat(environ))
+    output.append('</pre>')
+
+    if environ['REQUEST_METHOD'] == 'POST':
+        # show form data as received by POST:
+	form = cgi.FieldStorage(fp=environ['wsgi.input'], environ=environ)
+        output.append('<h1>FORM DATA</h1>')
+        output.append(form['test'].value)
+        if form['test'].value == "dogs":
+    # here we write happiness and give the form again
+	        output.append('<form method="post">')
+        	output.append('<input type="text" name="test">')
+        	output.append('<input type="submit">')
+        	output.append('</form>')
+		output.append("<p>HAPPINESS")
+    else:
+	#create a simple form if no input has been posted to us
+        output.append('<form method="post">')
+        output.append('<input type="text" name="test">')
+        output.append('<input type="submit">')
+        output.append('</form>')
+
+# append the form data to the file
+    output.append('<p>attempting to write to file')
+    myFile = open("/var/www/wsgifiles/datasaur/FILE.txt", "at")
+    myFile.write("\n")
+    myFile.write(form['test'].value)
+    myFile.close()
+    output.append('<p>maybe I wrote to that file')
+
+    # send results
+    output_len = sum(len(line) for line in output)
+    start_response('200 OK', [('Content-type', 'text/html'),
+                              ('Content-Length', str(output_len))])
+    return output
