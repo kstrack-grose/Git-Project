@@ -1,0 +1,15 @@
+#should be used to supplement Carlos's WSGI upload
+
+#creates a simple form
+<html>
+<head><title>Page Title Here</title>
+</head>
+<body>
+<form action="demo_form.asp" method="get">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  <input type="submit" value="Submit">
+</form>
+Html body stuff goes here
+</body>
+</html>
