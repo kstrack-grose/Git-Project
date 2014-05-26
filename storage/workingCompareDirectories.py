@@ -79,7 +79,8 @@ def compareAndMakeDirectories(userPath, newVersion, versionDirectoryContents, us
 ############################### VARIABLES ######################################
 
 	# the user-given path, aka the source of the data we're going to copy
-source = raw_input("gimme a source path ")
+
+source = /var/www/wsgifiles/dinoeggs
 
 	# list of contents (aka files) of user given path
 sourceFiles = os.listdir(source)
