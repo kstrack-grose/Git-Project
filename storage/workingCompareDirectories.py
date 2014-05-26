@@ -7,6 +7,8 @@
 	# in a repo and making a new directory with user-given data
 	# if changes had been detected 
 
+	#Run this program in root. If you are having weird permission errors, this is why.
+
 import os, sys, makeFiles, distutils.core, datetime, time
 
 ########################### FUNCTIONS ################################
@@ -24,7 +26,7 @@ def lastDir(repo):
         repoList = sorted(os.listdir(repo))
         # lastDir will become the last entry in repoList
         lastDir = repoList[-1]
-        # print lastDir
+        #print lastDir
         return lastDir
 
 
@@ -43,7 +45,7 @@ def compareAndMakeDirectories(userPath, newVersion, versionDirectoryContents, us
 
 # go through contents of old directory  
         for x in range(0, len(versionDirectoryContents)):
-                file = str(versionDirectoryContents[x])
+                file = recentVersion+'/'+ str(versionDirectoryContents[x])
                 versionContents = makeFiles.readFiles(file)
                 versionContentList.append(versionContents)
 
@@ -55,19 +57,34 @@ def compareAndMakeDirectories(userPath, newVersion, versionDirectoryContents, us
                 userContents = makeFiles.readFiles(file)
                 userContentList.append(userContents)
 
+#Ignore this, it is there incase we need to do more troubleshooting
+#	print "userContentList"
+#	print userContentList
+#	print "sorted user"
+#	print sorted(userContentList)
+
+#	print "versionContentList"
+#	print versionContentList
+#	print "sorted version"
+#	print sorted(versionContentList)
+
 
 # if there are no changes then return no changes
-        if versionContentList == userContentList:
+        if sorted(versionContentList) == sorted(userContentList):
                 print "no change"
+		for fileName in userDirectoryContents:
+ 			os.remove(userPath+"/"+fileName)
                 return
 
 # newVersion will eventually come from repo (being the path for the
 # user's repo) + '.' + timeStamp (so that it will be named so that it 
 # is after lastDir, and becomes the NEW most recent directory, or 
 # lastDir the NEXT time you run this function.
-        elif userContentList != versionContentList:
+        elif sorted(userContentList) != sorted(versionContentList):
                 distutils.dir_util.copy_tree(userPath, newVersion)
-                return
+                for fileName in userDirectoryContents:
+                	os.remove(userPath+"/"+fileName)
+		return
 
         else:
                 print "something went wrong"
@@ -80,7 +97,7 @@ def compareAndMakeDirectories(userPath, newVersion, versionDirectoryContents, us
 
 	# the user-given path, aka the source of the data we're going to copy
 
-source = /var/www/wsgifiles/dinoeggs
+source = "/var/www/wsgifiles/dinoeggs"
 
 	# list of contents (aka files) of user given path
 sourceFiles = os.listdir(source)
@@ -108,3 +125,4 @@ destination = repo+'/'+timestamp
 
 	# Now we're calling the program! Magic presto!
 compareAndMakeDirectories(source, destination, recentVersionCont, sourceFiles)
+
