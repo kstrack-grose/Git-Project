@@ -42,10 +42,20 @@ def application(environ, start_response):
     html1contents = index1.read()
     output.append(html1contents)
  # add username and password forms
-#    output.append('<form id="upload" name="upload" method="POST" enctype="multipart/form-data">')
+    output.append('<form id="upload" name="upload" method="POST" enctype="multipart/form-data">')
     output.append('<div id="usrname">Username: <input type="text" name="username" placeholder="Username"><br></div')
-    output.append('<form method="post">')
+
+    output.append('<form id="upload" name="upload" method="POST" enctype="multipart/form-data">')
     output.append('<div id="pwd">Password: <input type="password" name="pwd" placeholder="Password"><br></div>')
+
+    if (form['username'].value != KeyError):
+        use = form['username'].value
+ ###### this right here is what's going wrong: I'm getting a KeyError for password
+ ###### and I can't figure out why or how to fix it
+    if (form['password'].value != KeyError):
+        pw = form['password'].value
+
+    output.append('<form method="post">')
     output.append('<p><input type="submit">')
     output.append('</form>')
  # second half of html file
@@ -56,12 +66,14 @@ def application(environ, start_response):
  # if posted:
     if environ['REQUEST_METHOD'] == 'POST':
      # put a new html file here!
- 
-       output.append("posted things")
-#        if (form['username'].value != ""):
-#            output.append("username exists")
-#        if (form['password'].value != ""):
-#            output.append("password exists")
+
+        output.append("posted things")
+
+
+#       if (form['username'].value != ""):
+#           output.append("username exists")
+#       if (form['password'].value != ""):
+#           output.append("password exists")
       # if username is correct:
       # print them out (just for now!)
 #        output.append(form['username'].value
